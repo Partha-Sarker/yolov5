@@ -545,18 +545,18 @@ class LoadImagesAndLabels(Dataset):  # for training/testing
             labels[:, [2, 4]] /= img.shape[0]  # normalized height 0-1
             labels[:, [1, 3]] /= img.shape[1]  # normalized width 0-1
 
-        if self.augment:
-            # flip up-down
-            if random.random() < hyp['flipud']:
-                img = np.flipud(img)
-                if nL:
-                    labels[:, 2] = 1 - labels[:, 2]
+        # if self.augment:
+        #     # flip up-down
+        #     if random.random() < hyp['flipud']:
+        #         img = np.flipud(img)
+        #         if nL:
+        #             labels[:, 2] = 1 - labels[:, 2]
 
-            # flip left-right
-            if random.random() < hyp['fliplr']:
-                img = np.fliplr(img)
-                if nL:
-                    labels[:, 1] = 1 - labels[:, 1]
+        #     # flip left-right
+        #     if random.random() < hyp['fliplr']:
+        #         img = np.fliplr(img)
+        #         if nL:
+        #             labels[:, 1] = 1 - labels[:, 1]
 
         labels_out = torch.zeros((nL, 6))
         if nL:

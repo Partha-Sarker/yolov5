@@ -517,8 +517,8 @@ if __name__ == '__main__':
                 'scale': (1, 0.0, 0.9),  # image scale (+/- gain)
                 'shear': (1, 0.0, 10.0),  # image shear (+/- deg)
                 'perspective': (0, 0.0, 0.001),  # image perspective (+/- fraction), range 0-0.001
-                'flipud': (0, 0.0, 0.0),  # image flip up-down (probability)
-                'fliplr': (0, 0.0, 0.0),  # image flip left-right (probability)
+                'flipud': (1, 0.0, 1.0),  # image flip up-down (probability)
+                'fliplr': (0, 0.0, 1.0),  # image flip left-right (probability)
                 'mosaic': (1, 0.0, 1.0),  # image mixup (probability)
                 'mixup': (1, 0.0, 1.0)}  # image mixup (probability)
 
